@@ -1,0 +1,63 @@
+#include <stdio.h>
+
+
+char * string_search(char * string, char* search)
+{
+	char* ptr_string;
+	char* ptr_search;
+	char* ptr_match;
+
+	if ((string == '\0') || (*search == '\0')) {
+		return NULL;
+
+	}
+
+	ptr_string= string;
+	while (*(ptr_match = ptr_string++) != '\0')
+	{
+		ptr_search = search;
+		while (*ptr_search++ == *ptr_match++)
+		{
+			if (*ptr_search == '\0') {
+
+			}
+		}
+	}
+	
+}
+int main()
+{
+	char string[] = "A thief named hong gil dong lived with friends named hong gil don and hong gil ja in a village named hong gil dong village.";
+	char search[100];
+	char* ptr_string;
+	char* ptr_search;
+	char* ptr_match;
+	int match_count;
+	
+
+	while (1)
+	{
+		printf("Enter the string");
+
+		if (fgets(search, sizeof(search), stdin) == NULL) {
+			break;
+		}
+
+		ptr_search = search;
+		while(*ptr_search != '\0'){
+			if (*ptr_search == '\n') {
+				*ptr_search = '\0';
+				break;
+			}
+			ptr_search++;
+		}
+	}
+
+	ptr_string = string;
+	match_count = 0;
+	while ((ptr_match = string_search(ptr_string, search)) != NULL)
+	{
+		printf("%d) %s\n", ++match_count, ptr_match);
+		ptr_string = ptr_match + 1
+	}
+}
