@@ -1,0 +1,14 @@
+
+# Compiled program files
+*.exe
+*.out
+*.o
+
+# Visual Studio files
+.vs/
+x64/
+Debug/
+Release/
+
+# Personal and secret files
+.env
